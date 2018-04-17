@@ -10,7 +10,7 @@ import UIKit
 
 class ArticlesCollectionViewController: UIViewController {
 
-    
+    @IBOutlet weak var articlesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
