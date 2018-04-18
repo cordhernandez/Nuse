@@ -12,7 +12,7 @@ class ArticlesCollectionViewController: UIViewController {
 
     @IBOutlet weak var articlesCollectionView: UICollectionView!
     
-    var news: [NewsModel] = []
+    var news: [News] = []
     var teases: [String] = []
     var headlines: [String] = []
     var urls: [String] = []
@@ -67,7 +67,7 @@ extension ArticlesCollectionViewController {
         SearchNews.searchForNews(callback: self.populateNews)
     }
     
-    func populateNews(news: [NewsModel], teases: [String], headlines: [String], urls: [String]) {
+    func populateNews(news: [News], teases: [String], headlines: [String], urls: [String]) {
         
         self.news = news
         self.teases = teases

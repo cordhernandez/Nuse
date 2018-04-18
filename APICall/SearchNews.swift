@@ -11,12 +11,12 @@ import Foundation
 class SearchNews {
     
     static var newsAPI: String?
-    static var news: [NewsModel] = []
+    static var news: [News] = []
     static var teases: [String] = []
     static var headlines: [String] = []
     static var urls: [String] = []
     
-    typealias Callback = ([NewsModel], [String], [String], [String]) -> ()
+    typealias Callback = ([News], [String], [String], [String]) -> ()
     
     static func searchForNews(callback: @escaping Callback) {
         
@@ -50,7 +50,7 @@ class SearchNews {
             do {
                 
                 let decoder = JSONDecoder()
-                self.news = try decoder.decode([NewsModel].self, from: data)
+                self.news = try decoder.decode([News].self, from: data)
                 
                 for item in self.news {
                     
