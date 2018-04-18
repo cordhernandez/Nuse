@@ -8,17 +8,18 @@
 
 import Foundation
 
-struct NewsModel: Decodable {
+struct News: Decodable {
     
     let id: String
     let type: String
     let header: String
     let subHeader: String
     let tease: String
-    let items: [ItemsModel]
+    let showMore: String
+    let items: [Items]
 }
 
-struct ItemsModel: Decodable {
+struct Items: Decodable {
     
     let id: String
     let type: String
@@ -27,4 +28,17 @@ struct ItemsModel: Decodable {
     let published: String
     let tease: String
     let summary: String
+    let breakingLabel: String
+    let images: [Images]
+}
+
+struct Images: Decodable {
+    
+    let id: String
+    let url: String
+    let headline: String
+    let published: String
+    let caption: String
+    let copyright: String
+    let graphic: Bool
 }
