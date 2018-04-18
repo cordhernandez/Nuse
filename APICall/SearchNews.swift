@@ -10,24 +10,28 @@ import Foundation
 
 class SearchNews {
     
-    var newsAPI: String?
-    var news: [NewsModel] = []
-    typealias Callback = ([NewsModel]) -> ()
+    static var newsAPI: String?
+    static var news: [NewsModel] = []
+    static var teases: [String] = []
+    static var headlines: [String] = []
+    static var urls: [String] = []
     
-    func searchForNews(callback: @escaping Callback) {
+    typealias Callback = ([NewsModel], [String], [String], [String]) -> ()
+    
+    static func searchForNews(callback: @escaping Callback) {
         
         newsAPI = "http://msgviewer.nbcnewstools.net:9207/v1/query/curation/news/"
         guard let url = URL(string: newsAPI ?? "") else {
             
             debugPrint("Failed to get URL API")
-            callback([])
+            callback([], [], [], [])
             return
         }
         
         getNewsFrom(url: url, callback: callback)
     }
     
-    func getNewsFrom(url: URL, callback: @escaping Callback) {
+    static func getNewsFrom(url: URL, callback: @escaping Callback) {
         
         let request = URLRequest(url: url)
         let session = URLSession.shared
@@ -47,7 +51,20 @@ class SearchNews {
                 
                 let decoder = JSONDecoder()
                 self.news = try decoder.decode([NewsModel].self, from: data)
-                callback(self.news)
+                
+                for item in self.news {
+                    
+                    for theItems in item.items {
+                        
+                        teases.append(theItems.tease)
+                        headlines.append(theItems.headline)
+                        urls.append(theItems.url)
+                        
+                        callback(self.news, teases, headlines, urls)
+                    }
+                }
+                
+//                callback(self.news)
             }
             catch {
                 debugPrint(error)
