@@ -10,5 +10,8 @@ import UIKit
 
 class ArticlesCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var readMoreButton: UIButton!
     
 }
