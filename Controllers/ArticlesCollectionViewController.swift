@@ -31,6 +31,33 @@ class ArticlesCollectionViewController: UIViewController {
         
         articlesCollectionView.delegate = self
         articlesCollectionView.dataSource = self
+        
+        configureMoasaicLayout()
+    }
+    
+    func configureMoasaicLayout() {
+        
+        let mosaic = TRMosaicLayout()
+        articlesCollectionView.collectionViewLayout = mosaic
+        mosaic.delegate = self as TRMosaicLayoutDelegate
+    }
+}
+
+//MARK: - Mosaic Delegate
+extension ArticlesCollectionViewController: TRMosaicLayoutDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, mosaicCellSizeTypeAtIndexPath indexPath: IndexPath) -> TRMosaicCellType {
+        
+        return indexPath.item % 3 == 0 ? TRMosaicCellType.big : TRMosaicCellType.small
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout: TRMosaicLayout, insetAtSection:Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+    }
+    
+    func heightForSmallMosaicCell() -> CGFloat {
+        return 150
     }
 }
 
@@ -59,7 +86,10 @@ extension ArticlesCollectionViewController: UICollectionViewDataSource, UICollec
             return UICollectionViewCell()
         }
         
-        goLoadItemsData(in: cell, at: indexPath, with: news)
+        main.addOperation {
+            
+            self.goLoadItemsData(in: cell, at: indexPath, with: self.news)
+        }
         
         return cell
     }
@@ -110,8 +140,8 @@ extension ArticlesCollectionViewController {
                 cell.newsImage.sd_setImage(with: URL(string: items.tease), completed: nil)
                 cell.headingLabel.text = items.headline
                 
-                cell.onReadMoreButtonTapped = { cell in
-                    self.openNewsArticlesURL(with: items.url)
+                cell.onReadMoreButtonTapped = { [weak self] cell in
+                    self?.openNewsArticlesURL(with: items.url)
                 }
             }
         }
