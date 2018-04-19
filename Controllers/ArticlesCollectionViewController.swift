@@ -15,6 +15,7 @@ class ArticlesCollectionViewController: UIViewController {
     var news: [News] = []
     var newsItems: [Items] = []
     
+    var refreshControl: UIRefreshControl!
     let main = OperationQueue.main
     
     
@@ -23,6 +24,7 @@ class ArticlesCollectionViewController: UIViewController {
         
         configureCollectionView()
         loadArticles()
+        setupRefreshControl()
     }
     
     func configureCollectionView() {
@@ -63,21 +65,24 @@ extension ArticlesCollectionViewController: UICollectionViewDataSource, UICollec
     }
 }
 
-//MARK: - URLS
+//MARK: - Pull To Refresh
 extension ArticlesCollectionViewController {
     
-    func openNewsArticlesURL(with urls: String) {
+    func setupRefreshControl() {
         
-        if let url = URL(string: urls) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor.black
+        refreshControl.tintColor = UIColor.white
+        
+        refreshControl.addTarget(self, action: #selector(loadArticles), for: .valueChanged)
+        articlesCollectionView.addSubview(refreshControl)
     }
 }
 
 //MARK: - Load Data
 extension ArticlesCollectionViewController {
     
-    func loadArticles() {
+    @objc func loadArticles() {
         
         SearchNews.searchForNews(callback: self.populateNews)
     }
@@ -89,6 +94,7 @@ extension ArticlesCollectionViewController {
         main.addOperation {
             
             self.articlesCollectionView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     
