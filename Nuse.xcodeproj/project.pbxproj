@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		322790D52085C26900868148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322790D42085C26900868148 /* AppDelegate.swift */; };
+		322790D72085C26900868148 /* ArticlesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322790D62085C26900868148 /* ArticlesCollectionViewController.swift */; };
+		322790DA2085C26900868148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322790D82085C26900868148 /* Main.storyboard */; };
+		322790DC2085C26A00868148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322790DB2085C26A00868148 /* Assets.xcassets */; };
+		322790DF2085C26A00868148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322790DD2085C26A00868148 /* LaunchScreen.storyboard */; };
+		322790EA2085C26A00868148 /* NuseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322790E92085C26A00868148 /* NuseTests.swift */; };
+		322790F72085C35500868148 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322790F62085C35500868148 /* News.swift */; };
+		322790FA2085C41F00868148 /* SearchNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322790F92085C41F00868148 /* SearchNews.swift */; };
+		322790FD2085C95900868148 /* ArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322790FC2085C95900868148 /* ArticlesCollectionViewCell.swift */; };
+		322790FF2087D31300868148 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322790FE2087D31300868148 /* SDWebImage.framework */; };
+		322791002087D31300868148 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 322790FE2087D31300868148 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3227910D2088233100868148 /* TRMosaicColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322791082088233100868148 /* TRMosaicColumn.swift */; };
+		3227910E2088233100868148 /* TRMosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322791092088233100868148 /* TRMosaicLayout.swift */; };
+		3227910F2088233100868148 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3227910A2088233100868148 /* .gitkeep */; };
+		322791102088233100868148 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3227910C2088233100868148 /* .gitkeep */; };
+		3227911220882D3200868148 /* newsVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3227911120882D3200868148 /* newsVideo.mp4 */; };
+		3227911420882DBA00868148 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227911320882DBA00868148 /* VideoViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		322790E62085C26A00868148 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 322790C92085C26900868148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 322790D02085C26900868148;
+			remoteInfo = Nuse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		322791012087D31300868148 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				322791002087D31300868148 /* SDWebImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		322790D12085C26900868148 /* Nuse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		322790D42085C26900868148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		322790D62085C26900868148 /* ArticlesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCollectionViewController.swift; sourceTree = "<group>"; };
+		322790D92085C26900868148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		322790DB2085C26A00868148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		322790DE2085C26A00868148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		322790E02085C26A00868148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		322790E52085C26A00868148 /* NuseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		322790E92085C26A00868148 /* NuseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuseTests.swift; sourceTree = "<group>"; };
+		322790EB2085C26A00868148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		322790F62085C35500868148 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		322790F92085C41F00868148 /* SearchNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNews.swift; sourceTree = "<group>"; };
+		322790FC2085C95900868148 /* ArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
+		322790FE2087D31300868148 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		322791022087D32E00868148 /* Nuse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nuse-Bridging-Header.h"; sourceTree = "<group>"; };
+		322791082088233100868148 /* TRMosaicColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRMosaicColumn.swift; sourceTree = "<group>"; };
+		322791092088233100868148 /* TRMosaicLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRMosaicLayout.swift; sourceTree = "<group>"; };
+		3227910A2088233100868148 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		3227910C2088233100868148 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		3227911120882D3200868148 /* newsVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = newsVideo.mp4; sourceTree = "<group>"; };
+		3227911320882DBA00868148 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		322790CE2085C26900868148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322790FF2087D31300868148 /* SDWebImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		322790E22085C26A00868148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		322790C82085C26900868148 = {
+			isa = PBXGroup;
+			children = (
+				322790FE2087D31300868148 /* SDWebImage.framework */,
+				322790D32085C26900868148 /* Nuse */,
+				322790E82085C26A00868148 /* NuseTests */,
+				322790D22085C26900868148 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		322790D22085C26900868148 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				322790D12085C26900868148 /* Nuse.app */,
+				322790E52085C26A00868148 /* NuseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		322790D32085C26900868148 /* Nuse */ = {
+			isa = PBXGroup;
+			children = (
+				322790FB2085C93900868148 /* Views */,
+				322790F82085C40200868148 /* APICall */,
+				322790F52085C2FB00868148 /* Models */,
+				322790F42085C2F200868148 /* Controllers */,
+				322791062088233100868148 /* TRMosaicLayout */,
+				322790D42085C26900868148 /* AppDelegate.swift */,
+				322790D82085C26900868148 /* Main.storyboard */,
+				322790DB2085C26A00868148 /* Assets.xcassets */,
+				322790DD2085C26A00868148 /* LaunchScreen.storyboard */,
+				322790E02085C26A00868148 /* Info.plist */,
+				3227911120882D3200868148 /* newsVideo.mp4 */,
+			);
+			path = Nuse;
+			sourceTree = "<group>";
+		};
+		322790E82085C26A00868148 /* NuseTests */ = {
+			isa = PBXGroup;
+			children = (
+				322790E92085C26A00868148 /* NuseTests.swift */,
+				322790EB2085C26A00868148 /* Info.plist */,
+			);
+			path = NuseTests;
+			sourceTree = "<group>";
+		};
+		322790F42085C2F200868148 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3227911320882DBA00868148 /* VideoViewController.swift */,
+				322790D62085C26900868148 /* ArticlesCollectionViewController.swift */,
+				322791022087D32E00868148 /* Nuse-Bridging-Header.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		322790F52085C2FB00868148 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				322790F62085C35500868148 /* News.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		322790F82085C40200868148 /* APICall */ = {
+			isa = PBXGroup;
+			children = (
+				322790F92085C41F00868148 /* SearchNews.swift */,
+			);
+			path = APICall;
+			sourceTree = "<group>";
+		};
+		322790FB2085C93900868148 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				322790FC2085C95900868148 /* ArticlesCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		322791062088233100868148 /* TRMosaicLayout */ = {
+			isa = PBXGroup;
+			children = (
+				322791072088233100868148 /* Classes */,
+				3227910B2088233100868148 /* Assets */,
+			);
+			path = TRMosaicLayout;
+			sourceTree = "<group>";
+		};
+		322791072088233100868148 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				322791082088233100868148 /* TRMosaicColumn.swift */,
+				322791092088233100868148 /* TRMosaicLayout.swift */,
+				3227910A2088233100868148 /* .gitkeep */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3227910B2088233100868148 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3227910C2088233100868148 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		322790D02085C26900868148 /* Nuse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 322790EE2085C26A00868148 /* Build configuration list for PBXNativeTarget "Nuse" */;
+			buildPhases = (
+				322790CD2085C26900868148 /* Sources */,
+				322790CE2085C26900868148 /* Frameworks */,
+				322790CF2085C26900868148 /* Resources */,
+				322791012087D31300868148 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nuse;
+			productName = Nuse;
+			productReference = 322790D12085C26900868148 /* Nuse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		322790E42085C26A00868148 /* NuseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 322790F12085C26A00868148 /* Build configuration list for PBXNativeTarget "NuseTests" */;
+			buildPhases = (
+				322790E12085C26A00868148 /* Sources */,
+				322790E22085C26A00868148 /* Frameworks */,
+				322790E32085C26A00868148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				322790E72085C26A00868148 /* PBXTargetDependency */,
+			);
+			name = NuseTests;
+			productName = NuseTests;
+			productReference = 322790E52085C26A00868148 /* NuseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		322790C92085C26900868148 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Cordero Hernandez";
+				TargetAttributes = {
+					322790D02085C26900868148 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					322790E42085C26A00868148 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 322790D02085C26900868148;
+					};
+				};
+			};
+			buildConfigurationList = 322790CC2085C26900868148 /* Build configuration list for PBXProject "Nuse" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 322790C82085C26900868148;
+			productRefGroup = 322790D22085C26900868148 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				322790D02085C26900868148 /* Nuse */,
+				322790E42085C26A00868148 /* NuseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		322790CF2085C26900868148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322790DF2085C26A00868148 /* LaunchScreen.storyboard in Resources */,
+				322790DC2085C26A00868148 /* Assets.xcassets in Resources */,
+				3227911220882D3200868148 /* newsVideo.mp4 in Resources */,
+				322791102088233100868148 /* .gitkeep in Resources */,
+				322790DA2085C26900868148 /* Main.storyboard in Resources */,
+				3227910F2088233100868148 /* .gitkeep in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		322790E32085C26A00868148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		322790CD2085C26900868148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322790F72085C35500868148 /* News.swift in Sources */,
+				322790D72085C26900868148 /* ArticlesCollectionViewController.swift in Sources */,
+				3227911420882DBA00868148 /* VideoViewController.swift in Sources */,
+				322790FD2085C95900868148 /* ArticlesCollectionViewCell.swift in Sources */,
+				322790FA2085C41F00868148 /* SearchNews.swift in Sources */,
+				322790D52085C26900868148 /* AppDelegate.swift in Sources */,
+				3227910E2088233100868148 /* TRMosaicLayout.swift in Sources */,
+				3227910D2088233100868148 /* TRMosaicColumn.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		322790E12085C26A00868148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322790EA2085C26A00868148 /* NuseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		322790E72085C26A00868148 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 322790D02085C26900868148 /* Nuse */;
+			targetProxy = 322790E62085C26A00868148 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		322790D82085C26900868148 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				322790D92085C26900868148 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		322790DD2085C26A00868148 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				322790DE2085C26A00868148 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		322790EC2085C26A00868148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		322790ED2085C26A00868148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		322790EF2085C26A00868148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5E82HJH2N5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Nuse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DeroHernandez.Nuse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nuse/Controllers/Nuse-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		322790F02085C26A00868148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5E82HJH2N5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Nuse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DeroHernandez.Nuse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nuse/Controllers/Nuse-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		322790F22085C26A00868148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5E82HJH2N5;
+				INFOPLIST_FILE = NuseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DeroHernandez.NuseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nuse.app/Nuse";
+			};
+			name = Debug;
+		};
+		322790F32085C26A00868148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5E82HJH2N5;
+				INFOPLIST_FILE = NuseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DeroHernandez.NuseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nuse.app/Nuse";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		322790CC2085C26900868148 /* Build configuration list for PBXProject "Nuse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				322790EC2085C26A00868148 /* Debug */,
+				322790ED2085C26A00868148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		322790EE2085C26A00868148 /* Build configuration list for PBXNativeTarget "Nuse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				322790EF2085C26A00868148 /* Debug */,
+				322790F02085C26A00868148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		322790F12085C26A00868148 /* Build configuration list for PBXNativeTarget "NuseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				322790F22085C26A00868148 /* Debug */,
+				322790F32085C26A00868148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 322790C92085C26900868148 /* Project object */;
+}
