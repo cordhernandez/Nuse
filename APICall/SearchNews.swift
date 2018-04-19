@@ -12,11 +12,8 @@ class SearchNews {
     
     static var newsAPI: String?
     static var news: [News] = []
-    static var teases: [String] = []
-    static var headlines: [String] = []
-    static var urls: [String] = []
     
-    typealias Callback = ([News], [String], [String], [String]) -> ()
+    typealias Callback = ([News]) -> ()
     
     static func searchForNews(callback: @escaping Callback) {
         
@@ -24,7 +21,7 @@ class SearchNews {
         guard let url = URL(string: newsAPI ?? "") else {
             
             debugPrint("Failed to get URL API")
-            callback([], [], [], [])
+            callback([])
             return
         }
         
@@ -47,30 +44,40 @@ class SearchNews {
                 return
             }
             
-            do {
-                
-                let decoder = JSONDecoder()
-                self.news = try decoder.decode([News].self, from: data)
-                
-                for item in self.news {
-                    
-                    for theItems in item.items {
-                        
-                        teases.append(theItems.tease)
-                        headlines.append(theItems.headline)
-                        urls.append(theItems.url)
-                        
-                        callback(self.news, teases, headlines, urls)
-                    }
-                }
-                
-//                callback(self.news)
-            }
-            catch {
-                debugPrint(error)
-            }
+            let news = parseNews(from: data)
+            callback(news)
         }
         
         task.resume()
     }
+    
+    private static func parseNews(from data: Data) -> [News] {
+        
+        var newsArray: [News] = []
+        
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) else {
+            return newsArray
+        }
+        
+        guard let jsonArray = jsonObject as? NSArray else {
+            return newsArray
+        }
+        
+        for element in jsonArray {
+            
+            guard let object = element as? NSDictionary else {
+                continue
+            }
+            
+            guard let news = News.getNewsJSONData(from: object) else {
+                continue
+            }
+            
+            newsArray.append(news)
+        }
+        
+        return newsArray
+    }
 }
+
+
