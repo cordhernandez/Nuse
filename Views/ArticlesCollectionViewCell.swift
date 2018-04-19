@@ -14,4 +14,10 @@ class ArticlesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var readMoreButton: UIButton!
     
+    var onReadMoreButtonTapped: ((ArticlesCollectionViewCell) -> ())?
+    
+    @IBAction func readMoreButtonTapped(_ sender: Any) {
+        
+        onReadMoreButtonTapped?(self)
+    }
 }
