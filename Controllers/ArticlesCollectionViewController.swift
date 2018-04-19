@@ -13,11 +13,10 @@ class ArticlesCollectionViewController: UIViewController {
     @IBOutlet weak var articlesCollectionView: UICollectionView!
     
     var news: [News] = []
-    var teases: [String] = []
-    var urls: [String] = []
-    var headlines: [String] = []
+    var newsItems: [Items] = []
     
     let main = OperationQueue.main
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +41,12 @@ extension ArticlesCollectionViewController: UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return teases.count
+        for item in news {
+            
+            newsItems = item.items
+        }
+        
+        return newsItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,17 +57,7 @@ extension ArticlesCollectionViewController: UICollectionViewDataSource, UICollec
             return UICollectionViewCell()
         }
         
-        let row = indexPath.row
-        let theTeases = teases[row]
-        let theHeadlines = headlines[row]
-        let theURLs = urls[row]
-        
-        cell.newsImage.sd_setImage(with: URL(string: theTeases), completed: nil)
-        cell.headingLabel.text = theHeadlines
-        
-        cell.onReadMoreButtonTapped = { cell in
-            self.openNewsArticlesURL(with: theURLs)
-        }
+        goLoadItemsData(in: cell, at: indexPath, with: news)
         
         return cell
     }
@@ -91,7 +85,6 @@ extension ArticlesCollectionViewController {
     func populateNews(news: [News]) {
         
         self.news = news
-        getItemsDataObject()
         
         main.addOperation {
             
@@ -99,16 +92,29 @@ extension ArticlesCollectionViewController {
         }
     }
     
-    func getItemsDataObject() {
+    func goLoadItemsData(in cell: ArticlesCollectionViewCell, at indexPath: IndexPath, with news: [News]) {
+        
+        let row = indexPath.row
         
         for item in news {
             
-            for object in item.items {
+            for _ in item.items {
                 
-                teases.append(object.tease)
-                headlines.append(object.headline)
-                urls.append(object.url)
+                let items = item.items[row]
+                cell.newsImage.sd_setImage(with: URL(string: items.tease), completed: nil)
+                cell.headingLabel.text = items.headline
+                
+                cell.onReadMoreButtonTapped = { cell in
+                    self.openNewsArticlesURL(with: items.url)
+                }
             }
+        }
+    }
+    
+    func openNewsArticlesURL(with urls: String) {
+        
+        if let url = URL(string: urls) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }
