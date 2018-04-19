@@ -25,6 +25,7 @@ class ArticlesCollectionViewController: UIViewController {
         configureCollectionView()
         loadArticles()
         setupRefreshControl()
+        hideNavigationBackButton()
     }
     
     func configureCollectionView() {
@@ -40,6 +41,12 @@ class ArticlesCollectionViewController: UIViewController {
         let mosaic = TRMosaicLayout()
         articlesCollectionView.collectionViewLayout = mosaic
         mosaic.delegate = self as TRMosaicLayoutDelegate
+    }
+    
+    func hideNavigationBackButton() {
+        
+        navigationItem.hidesBackButton = true
+        navigationController?.isNavigationBarHidden = false
     }
 }
 

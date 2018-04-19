@@ -4,14 +4,13 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Articles Collection View Controller-->
+        <!--Articles-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ArticlesCollectionViewController" customModule="Nuse" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,14 +102,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RjC-Ox-kLd"/>
+                    <navigationItem key="navigationItem" title="Articles" id="RjC-Ox-kLd"/>
                     <connections>
                         <outlet property="articlesCollectionView" destination="IIp-Kr-QO4" id="Cft-mp-TCK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="113.79310344827587"/>
+            <point key="canvasLocation" x="1242" y="114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="00h-yd-YxR">
@@ -121,15 +120,81 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rNb-y5-2Aq"/>
+                        <segue destination="qSq-HS-oLx" kind="relationship" relationship="rootViewController" id="rRe-KI-wCI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99R-6P-Hb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.80000000000001" y="113.79310344827587"/>
+            <point key="canvasLocation" x="-551" y="114"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="z6a-w2-QKt">
+            <objects>
+                <viewController id="qSq-HS-oLx" customClass="VideoViewController" customModule="Nuse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S1P-h4-nYP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5TC-F0-D30" userLabel="Background Layer">
+                                <rect key="frame" x="0.0" y="-61" width="375" height="664"/>
+                                <color key="backgroundColor" red="0.11762935670000001" green="0.1176572666" blue="0.1176275685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spX-Fv-x6Z">
+                                <rect key="frame" x="16" y="90" width="343" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="s6v-jz-6hE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="65"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whA-HR-ZaC">
+                                <rect key="frame" x="59" y="485" width="257" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="257" id="RZl-Pt-lal"/>
+                                    <constraint firstAttribute="height" constant="61" id="hYW-5P-zC1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="qSq-HS-oLx" eventType="touchUpInside" id="oBN-ie-ihX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="whA-HR-ZaC" firstAttribute="leading" secondItem="o19-6m-azA" secondAttribute="leading" constant="59" id="0ND-iU-BGA"/>
+                            <constraint firstItem="5TC-F0-D30" firstAttribute="height" secondItem="S1P-h4-nYP" secondAttribute="height" constant="61" id="2VR-a6-a5m"/>
+                            <constraint firstItem="5TC-F0-D30" firstAttribute="width" secondItem="S1P-h4-nYP" secondAttribute="width" id="314-Lk-Y5H"/>
+                            <constraint firstItem="o19-6m-azA" firstAttribute="trailing" secondItem="whA-HR-ZaC" secondAttribute="trailing" constant="59" id="PnX-1d-1yV"/>
+                            <constraint firstItem="spX-Fv-x6Z" firstAttribute="top" secondItem="o19-6m-azA" secondAttribute="top" constant="90" id="Ryu-GH-h4w"/>
+                            <constraint firstItem="o19-6m-azA" firstAttribute="trailing" secondItem="spX-Fv-x6Z" secondAttribute="trailing" constant="16" id="Tzg-Fr-qtV"/>
+                            <constraint firstItem="5TC-F0-D30" firstAttribute="centerY" secondItem="o19-6m-azA" secondAttribute="centerY" constant="-30.5" id="WW6-CY-Uql"/>
+                            <constraint firstItem="whA-HR-ZaC" firstAttribute="centerX" secondItem="o19-6m-azA" secondAttribute="centerX" id="Xcu-se-D5D"/>
+                            <constraint firstItem="spX-Fv-x6Z" firstAttribute="leading" secondItem="o19-6m-azA" secondAttribute="leading" constant="16" id="YL4-e5-XDT"/>
+                            <constraint firstItem="5TC-F0-D30" firstAttribute="centerX" secondItem="o19-6m-azA" secondAttribute="centerX" id="Yog-y8-eeW"/>
+                            <constraint firstItem="spX-Fv-x6Z" firstAttribute="centerX" secondItem="o19-6m-azA" secondAttribute="centerX" id="jSR-kI-yTa"/>
+                            <constraint firstItem="o19-6m-azA" firstAttribute="bottom" secondItem="whA-HR-ZaC" secondAttribute="bottom" constant="57" id="vuq-uo-eGa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o19-6m-azA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="209-Un-Qwn"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toArticlesSegue" id="DiN-9f-kRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3t-gJ-9oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.80000000000001" y="113.79310344827587"/>
         </scene>
     </scenes>
 </document>
