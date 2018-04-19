@@ -9,13 +9,13 @@
 import UIKit
 
 class ArticlesCollectionViewController: UIViewController {
-
+    
     @IBOutlet weak var articlesCollectionView: UICollectionView!
     
     var news: [News] = []
     var teases: [String] = []
-    var headlines: [String] = []
     var urls: [String] = []
+    var headlines: [String] = []
     
     let main = OperationQueue.main
     
@@ -54,8 +54,29 @@ extension ArticlesCollectionViewController: UICollectionViewDataSource, UICollec
         }
         
         let row = indexPath.row
+        let theTeases = teases[row]
+        let theHeadlines = headlines[row]
+        let theURLs = urls[row]
+        
+        cell.newsImage.sd_setImage(with: URL(string: theTeases), completed: nil)
+        cell.headingLabel.text = theHeadlines
+        
+        cell.onReadMoreButtonTapped = { cell in
+            self.openNewsArticlesURL(with: theURLs)
+        }
         
         return cell
+    }
+}
+
+//MARK: - URLS
+extension ArticlesCollectionViewController {
+    
+    func openNewsArticlesURL(with urls: String) {
+        
+        if let url = URL(string: urls) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
 
@@ -67,16 +88,27 @@ extension ArticlesCollectionViewController {
         SearchNews.searchForNews(callback: self.populateNews)
     }
     
-    func populateNews(news: [News], teases: [String], headlines: [String], urls: [String]) {
+    func populateNews(news: [News]) {
         
         self.news = news
-        self.teases = teases
-        self.headlines = headlines
-        self.urls = urls
+        getItemsDataObject()
         
         main.addOperation {
             
             self.articlesCollectionView.reloadData()
+        }
+    }
+    
+    func getItemsDataObject() {
+        
+        for item in news {
+            
+            for object in item.items {
+                
+                teases.append(object.tease)
+                headlines.append(object.headline)
+                urls.append(object.url)
+            }
         }
     }
 }
